@@ -37,8 +37,99 @@ O projeto tem como objetivo desenvolver um banco de dados relacional para auxili
 
 
 ### 1.4. Entidades e atributos
+O sistema será composto por seis entidades principais, responsáveis pelo armazenamento das informações necessárias para o gerenciamento da biblioteca.
+
+#### Livro
+
+- id_livro (chave primária);
+- titulo;
+- ano_publicacao;
+- genero;
+- quantidade_exemplares (atributo derivado).
+
+#### Autor
+
+- id_autor (chave primária);
+- nome;
+- nacionalidade.
+
+#### Leitor
+
+- id_leitor (chave primária);
+- nome;
+- cpf;
+- data_nascimento;
+- endereco (atributo composto por rua, número, bairro, cidade e CEP);
+- telefone (atributo multivalorado);
+- email;
+- idade (atributo derivado).
+
+#### Carteirinha
+
+- id_carteirinha (chave primária);
+- data_emissao;
+- data_validade;
+- situacao.
+
+#### Empréstimo
+
+- id_emprestimo (chave primária);
+- data_emprestimo;
+- data_prevista_devolucao;
+- data_devolucao;
+- quantidade_renovacoes;
+- dias_atraso (atributo derivado).
+
+#### Exemplar
+
+- id_exemplar (chave primária);
+- numero_exemplar;
+- edicao;
+- estante;
+- prateleira;
+- estado_conservacao;
+- situacao;
+- data_aquisicao.
+
+#### Classificação dos atributos
+
+| Tipo de atributo | Exemplo |
+|---|---|
+| Simples | Título do livro |
+| Composto | Endereço do leitor |
+| Multivalorado | Telefone do leitor |
+| Derivado | Idade do leitor |
+| Chave primária | ID do leitor |
 
 ### 1.5. Regras de negócio e relacionamentos
+
+#### Regras de negócio
+
+- Cada leitor poderá possuir no máximo dois empréstimos ativos simultaneamente, referentes a livros diferentes.
+- Cada registro de empréstimo será referente a apenas um exemplar.
+- O prazo inicial para devolução será de 30 dias.
+- Será permitida apenas uma renovação por empréstimo, acrescentando 15 dias ao prazo de devolução.
+- Leitores com empréstimos atrasados não poderão realizar novos empréstimos.
+- Cada leitor deverá possuir uma única carteirinha.
+- A carteirinha terá validade de dois anos.
+- Cada livro será classificado em um único gênero literário.
+- Cada livro deverá possuir pelo menos um exemplar cadastrado.
+- Edições diferentes de uma mesma obra serão cadastradas como exemplares distintos do mesmo livro.
+- Cada livro deverá possuir pelo menos um autor identificado.
+- Cada autor cadastrado deverá estar associado a pelo menos um livro.
+- Um exemplar não poderá estar emprestado para dois leitores simultaneamente.
+- Exemplares perdidos, danificados ou retirados definitivamente do acervo terão sua situação atualizada, preservando o histórico.
+- Novos exemplares recebidos pela biblioteca deverão possuir registros próprios.
+
+#### Relacionamentos
+
+| Entidades | Relacionamento | Cardinalidades |
+|---|---|---|
+| Leitor e Empréstimo | Realiza | 1:N |
+| Livro e Exemplar | Possui | 1:N |
+| Exemplar e Empréstimo | Participa | 1:N |
+| Autor e Livro | Escreve | N:N |
+| Leitor e Carteirinha | Possui | 1:1 |
 
 ## 2. Modelagem Conceitual
 
