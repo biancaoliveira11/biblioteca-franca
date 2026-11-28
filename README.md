@@ -133,6 +133,23 @@ O sistema será composto por seis entidades principais, responsáveis pelo armaz
 
 ## 2. Modelagem Conceitual
 
+O modelo conceitual foi desenvolvido utilizando a ferramenta
+Draw.io, seguindo a notação de Chen.
+
+O Diagrama Entidade-Relacionamento (DER) apresenta as seis
+entidades principais do sistema, seus atributos, relacionamentos
+e respectivas cardinalidades.
+
+O modelo contempla atributos simples, compostos, multivalorados,
+derivados e identificadores, além dos relacionamentos
+1:1, 1:N e N:N.
+
+### 2.1. Diagrama Entidade-Relacionamento (DER)
+
+![Modelo Conceitual](diagramas/modelo-conceitual-biblioteca.png)
+
+[Arquivo editável do diagrama](diagramas/modelo-conceitual-biblioteca.drawio)
+
 Em desenvolvimento.
 
 ## 3. Modelagem Lógica
