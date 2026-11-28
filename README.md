@@ -146,9 +146,7 @@ derivados e identificadores, além dos relacionamentos
 
 ### 2.1. Diagrama Entidade-Relacionamento (DER)
 
-![Modelo Conceitual](diagramas/modelo-conceitual-biblioteca.png)
-
-[Arquivo editável do diagrama](diagramas/modelo-conceitual-biblioteca.drawio)
+![Modelo Conceitual](diagramas/modelo-conceitual-biblioteca.drawio%20%282%29.png)
 
 Em desenvolvimento.
 
